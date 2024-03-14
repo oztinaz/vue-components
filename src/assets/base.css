@@ -1,3 +1,5 @@
+@import './variables/index.css';
+
 :root {
   --page-padding: 15px;
 }
