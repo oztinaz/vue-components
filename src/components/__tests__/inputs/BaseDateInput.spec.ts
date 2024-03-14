@@ -1,6 +1,6 @@
 import BaseDateInput from '@/components/inputs/BaseDateInput.vue'
 import { mount, type VueWrapper } from '@vue/test-utils'
-import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, test } from 'vitest'
 import { ref, type Ref } from 'vue'
 
 describe('@/components/inputs/BaseDateInput.vue', () => {
