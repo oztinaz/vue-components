@@ -1,0 +1,21 @@
+:root {
+  --c-extra-light-blue: rgb(121, 162, 240);
+  --c-light-blue: rgb(85, 136, 233);
+  --c-blue: rgb(40, 100, 211);
+  --c-dark-blue: rgb(41, 82, 194);
+
+  --c-extra-light-green: rgb(104, 214, 104);
+  --c-light-green: rgb(77, 187, 77);
+  --c-green: rgb(40, 158, 40);
+  --c-dark-green: rgb(23, 134, 23);
+
+  --c-extra-light-red: rgb(241, 100, 100);
+  --c-light-red: rgb(240, 71, 71);
+  --c-red: rgb(224, 42, 42);
+  --c-dark-red: rgb(199, 32, 32);
+
+  --c-extra-light-grey: rgb(226, 226, 226);
+  --c-light-grey: rgb(216, 216, 216);
+  --c-grey: rgb(190, 190, 190);
+  --c-dark-grey: rgb(165, 165, 165);
+}
