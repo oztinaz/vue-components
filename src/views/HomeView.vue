@@ -1,9 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div id="home-view" data-test="home">
-    Home View
-  </div>
+  <div id="home-view" data-test="home">Home View</div>
 </template>
 
 <style scoped>
