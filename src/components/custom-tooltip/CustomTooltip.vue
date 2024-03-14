@@ -31,7 +31,11 @@ const isVertical: ComputedRef<boolean> = computed((): boolean => {
 
 <template>
   <div class="tooltip">
-    <CustomTooltipToggler :attribute="attribute" v-model:size="togglerSize" v-model:is-open="isOpen">
+    <CustomTooltipToggler
+      :attribute="attribute"
+      v-model:size="togglerSize"
+      v-model:is-open="isOpen"
+    >
       <slot name="toggler"></slot>
     </CustomTooltipToggler>
     <CustomTooltipBalloon
