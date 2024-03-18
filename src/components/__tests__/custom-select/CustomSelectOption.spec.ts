@@ -1,9 +1,9 @@
-import CustomSelectOption from "@/components/custom-select/CustomSelectOption.vue"
-import { beforeEach, describe, expect, test, vi, type Mock } from "vitest"
-import { ref, type Ref } from "vue"
-import { faker } from "@faker-js/faker"
-import { shallowMount, type VueWrapper } from "@vue/test-utils"
-import type { CustomSelectOption as TCustomSelectOption } from "@/types/CustomSelect"
+import CustomSelectOption from '@/components/custom-select/CustomSelectOption.vue'
+import { beforeEach, describe, expect, test, vi, type Mock } from 'vitest'
+import { ref, type Ref } from 'vue'
+import { faker } from '@faker-js/faker'
+import { shallowMount, type VueWrapper } from '@vue/test-utils'
+import type { CustomSelectOption as TCustomSelectOption } from '@/types/CustomSelect'
 
 describe('@/components/custom-select/CustomSelectOption.vue', () => {
   const option: TCustomSelectOption = {
@@ -21,7 +21,7 @@ describe('@/components/custom-select/CustomSelectOption.vue', () => {
       props: {
         close: close,
         modelValue: selection.value,
-        "onUpdate:modelValue": (e: any): void => {
+        'onUpdate:modelValue': (e: any): void => {
           selection.value = e
         },
         option: option

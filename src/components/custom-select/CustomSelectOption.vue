@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { CustomSelectOption } from '@/types/CustomSelect';
+import type { CustomSelectOption } from '@/types/CustomSelect'
 
 const selection = defineModel<boolean | Date | number | string | null>()
 

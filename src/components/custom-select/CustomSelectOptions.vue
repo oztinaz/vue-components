@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import CustomSelectOption from './CustomSelectOption.vue';
-import CustomSelectOptionSearch from './CustomSelectOptionSearch.vue';
-import { ref, type ComputedRef, type Ref, computed } from 'vue';
-import type { CustomSelectOption as TCustomSelectOption } from '@/types/CustomSelect';
-import { ArrayUtils } from '@/utils/ArrayUtils';
+import CustomSelectOption from './CustomSelectOption.vue'
+import CustomSelectOptionSearch from './CustomSelectOptionSearch.vue'
+import { ref, type ComputedRef, type Ref, computed } from 'vue'
+import type { CustomSelectOption as TCustomSelectOption } from '@/types/CustomSelect'
+import { ArrayUtils } from '@/utils/ArrayUtils'
 
 const selection = defineModel<boolean | Date | number | string | null>({
   required: true
@@ -25,9 +25,9 @@ const options: ComputedRef<TCustomSelectOption[]> = computed((): TCustomSelectOp
   if (!props.searchable || searchQuery.value === '') {
     return props.options
   }
-  return ArrayUtils.has(props.options, filterOptionsBySearchQuery, searchQuery.value) ?
-    ArrayUtils.filter(props.options, filterOptionsBySearchQuery, searchQuery.value) :
-    []
+  return ArrayUtils.has(props.options, filterOptionsBySearchQuery, searchQuery.value)
+    ? ArrayUtils.filter(props.options, filterOptionsBySearchQuery, searchQuery.value)
+    : []
 })
 </script>
 

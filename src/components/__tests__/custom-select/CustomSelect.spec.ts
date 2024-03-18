@@ -1,18 +1,20 @@
-import CustomSelect from "@/components/custom-select/CustomSelect.vue"
-import { ArrayUtils } from "@/utils/ArrayUtils"
-import { beforeEach, describe, expect, test } from "vitest"
-import { ref, type Ref } from "vue"
-import { faker } from "@faker-js/faker"
-import { flushPromises, mount, type VueWrapper } from "@vue/test-utils"
-import type { CustomSelectOption } from "@/types/CustomSelect"
+import CustomSelect from '@/components/custom-select/CustomSelect.vue'
+import { ArrayUtils } from '@/utils/ArrayUtils'
+import { beforeEach, describe, expect, test } from 'vitest'
+import { ref, type Ref } from 'vue'
+import { faker } from '@faker-js/faker'
+import { flushPromises, mount, type VueWrapper } from '@vue/test-utils'
+import type { CustomSelectOption } from '@/types/CustomSelect'
 
 describe('@/components/custom-select/CustomSelect.vue', () => {
-  const options: CustomSelectOption[] = ArrayUtils.createRange(1).map((index: number): CustomSelectOption => {
-    return {
-      label: faker.lorem.word(),
-      value: faker.lorem.word()
+  const options: CustomSelectOption[] = ArrayUtils.createRange(1).map(
+    (): CustomSelectOption => {
+      return {
+        label: faker.lorem.word(),
+        value: faker.lorem.word()
+      }
     }
-  })
+  )
   const selection: Ref<boolean | Date | number | string | null> = ref(null)
   let wrapper: VueWrapper
 
@@ -20,7 +22,7 @@ describe('@/components/custom-select/CustomSelect.vue', () => {
     wrapper = mount(CustomSelect, {
       props: {
         modelValue: selection.value,
-        "onUpdate:modelValue": (e: any): void => {
+        'onUpdate:modelValue': (e: any): void => {
           selection.value = e
         },
         options: options

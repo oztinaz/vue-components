@@ -1,20 +1,23 @@
 <script setup lang="ts">
 import CustomSelectOptions from './CustomSelectOptions.vue'
 import CustomSelectToggler from './CustomSelectToggler.vue'
-import { ref, type Ref } from 'vue';
-import type { CustomSelectOption } from '@/types/CustomSelect';
+import { ref, type Ref } from 'vue'
+import type { CustomSelectOption } from '@/types/CustomSelect'
 
 const selection = defineModel<boolean | Date | number | string | null>({
   required: true
 })
 
-const props = withDefaults(defineProps<{
-  options: CustomSelectOption[]
-  searchable?: boolean
-  title?: string
-}>(), {
-  searchable: false
-})
+const props = withDefaults(
+  defineProps<{
+    options: CustomSelectOption[]
+    searchable?: boolean
+    title?: string
+  }>(),
+  {
+    searchable: false
+  }
+)
 
 const isOpen: Ref<boolean> = ref(false)
 

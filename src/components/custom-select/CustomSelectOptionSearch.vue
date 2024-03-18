@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import StringInput from '@/components/inputs/StringInput.vue';
+import StringInput from '@/components/inputs/StringInput.vue'
 
 const searchQuery = defineModel<string>({
   required: true

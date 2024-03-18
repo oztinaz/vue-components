@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import CustomSelectTogglerLabelWithoutTitle from './CustomSelectTogglerLabelWithoutTitle.vue';
-import CustomSelectTogglerLabelWithTitle from './CustomSelectTogglerLabelWithTitle.vue';
-import FaCaretDownIcon from '@/components/icons/fa/FaCaretDownIcon.vue';
-import FaCaretLeftIcon from '@/components/icons/fa/FaCaretLeftIcon.vue';
-import { computed, type ComputedRef } from 'vue';
-import type { CustomSelectOption } from '@/types/CustomSelect';
+import CustomSelectTogglerLabelWithoutTitle from './CustomSelectTogglerLabelWithoutTitle.vue'
+import CustomSelectTogglerLabelWithTitle from './CustomSelectTogglerLabelWithTitle.vue'
+import FaCaretDownIcon from '@/components/icons/fa/FaCaretDownIcon.vue'
+import FaCaretLeftIcon from '@/components/icons/fa/FaCaretLeftIcon.vue'
+import { computed, type ComputedRef } from 'vue'
+import type { CustomSelectOption } from '@/types/CustomSelect'
 
 const props = defineProps<{
   close: Function
@@ -26,12 +26,15 @@ const emptySelectionLabel: ComputedRef<string> = computed((): string => {
 })
 
 const label: ComputedRef<string> = computed((): string => {
-  return props.selection === null ? emptySelectionLabel.value : props.options.filter((option: CustomSelectOption) => option.value === props.selection)[0].label
+  return props.selection === null
+    ? emptySelectionLabel.value
+    : props.options.filter((option: CustomSelectOption) => option.value === props.selection)[0]
+        .label
 })
 
 const isTitleDefined = (title: string | undefined): title is string => {
   return title !== undefined
-} 
+}
 
 const toggle = (): void => {
   if (props.isOpen) {
@@ -50,11 +53,7 @@ const toggle = (): void => {
       data-test="label-with-title"
       v-if="isTitleDefined(props.title)"
     />
-    <CustomSelectTogglerLabelWithoutTitle
-      :label="label"
-      data-test="label-without-title"
-      v-else
-    />
+    <CustomSelectTogglerLabelWithoutTitle :label="label" data-test="label-without-title" v-else />
     <FaCaretDownIcon color="grey" data-test="down-icon" v-if="isOpen" />
     <FaCaretLeftIcon color="grey" data-test="left-icon" v-else />
   </div>

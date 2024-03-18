@@ -1,14 +1,14 @@
-import CustomSelectToggler from "@/components/custom-select/CustomSelectToggler.vue";
-import { beforeEach, describe, expect, test, vi } from "vitest";
-import type { CustomSelectOption } from "@/types/CustomSelect";
-import { flushPromises, mount, type VueWrapper } from "@vue/test-utils";
-import { ArrayUtils } from "@/utils/ArrayUtils";
-import { faker } from "@faker-js/faker";
+import CustomSelectToggler from '@/components/custom-select/CustomSelectToggler.vue'
+import { beforeEach, describe, expect, test, vi } from 'vitest'
+import type { CustomSelectOption } from '@/types/CustomSelect'
+import { flushPromises, mount, type VueWrapper } from '@vue/test-utils'
+import { ArrayUtils } from '@/utils/ArrayUtils'
+import { faker } from '@faker-js/faker'
 
 describe('@/components/custom-select/CustomSelectToggler.vue', () => {
   const close = vi.fn()
   const open = vi.fn()
-  const options: CustomSelectOption[] = ArrayUtils.createRange(1).map((element: number) => {
+  const options: CustomSelectOption[] = ArrayUtils.createRange(1).map(() => {
     return {
       label: faker.lorem.word(),
       value: faker.lorem.word()
@@ -29,22 +29,22 @@ describe('@/components/custom-select/CustomSelectToggler.vue', () => {
     })
   })
 
-  test('className is \'toggler open\' when isOpen is true', async () => {
+  test("className is 'toggler open' when isOpen is true", async () => {
     await wrapper.setProps({
       isOpen: true
     })
     expect(wrapper.vm.className).toBe('toggler open')
   })
 
-  test('className is \'toggler\' when isOpen is false', () => {
+  test("className is 'toggler' when isOpen is false", () => {
     expect(wrapper.vm.className).toBe('toggler')
   })
 
-  test('emptySelectionLabel is \'Select\' when props.title is undefined', () => {
+  test("emptySelectionLabel is 'Select' when props.title is undefined", () => {
     expect(wrapper.vm.emptySelectionLabel).toBe('Select')
   })
 
-  test('emptySelectionLabel is \'Select\' when props.title is undefined', async () => {
+  test("emptySelectionLabel is 'Select' when props.title is undefined", async () => {
     const title: string = faker.lorem.word()
     await wrapper.setProps({
       title: title
@@ -102,7 +102,7 @@ describe('@/components/custom-select/CustomSelectToggler.vue', () => {
     await flushPromises()
     const labelWithTitleComponent = wrapper.find('[data-test="label-with-title"]')
     const labelWithoutTitleComponent = wrapper.find('[data-test="label-without-title"]')
-  
+
     expect(labelWithTitleComponent.exists()).toBeTruthy()
     expect(labelWithoutTitleComponent.exists()).toBeFalsy()
   })
@@ -110,7 +110,7 @@ describe('@/components/custom-select/CustomSelectToggler.vue', () => {
   test('CustomSelectTogglerLabelWithoutTitle is shown when props.title is undefined', () => {
     const labelWithTitleComponent = wrapper.find('[data-test="label-with-title"]')
     const labelWithoutTitleComponent = wrapper.find('[data-test="label-without-title"]')
-  
+
     expect(labelWithTitleComponent.exists()).toBeFalsy()
     expect(labelWithoutTitleComponent.exists()).toBeTruthy()
   })
@@ -122,7 +122,7 @@ describe('@/components/custom-select/CustomSelectToggler.vue', () => {
     await flushPromises()
     const downIconComponent = wrapper.find('[data-test="down-icon"]')
     const leftIconComponent = wrapper.find('[data-test="left-icon"]')
-  
+
     expect(downIconComponent.exists()).toBeTruthy()
     expect(leftIconComponent.exists()).toBeFalsy()
   })
@@ -130,7 +130,7 @@ describe('@/components/custom-select/CustomSelectToggler.vue', () => {
   test('FaCaretLeftIcon is shown when props.isOpen is false', () => {
     const downIconComponent = wrapper.find('[data-test="down-icon"]')
     const leftIconComponent = wrapper.find('[data-test="left-icon"]')
-  
+
     expect(downIconComponent.exists()).toBeFalsy()
     expect(leftIconComponent.exists()).toBeTruthy()
   })
