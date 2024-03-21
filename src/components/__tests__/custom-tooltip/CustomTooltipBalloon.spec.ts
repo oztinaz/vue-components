@@ -1,6 +1,6 @@
 import CustomTooltipBalloon from '@/components/custom-tooltip/CustomTooltipBalloon.vue'
-import { beforeEach, describe, expect, test } from 'vitest'
 import { VueWrapper, mount } from '@vue/test-utils'
+import { beforeEach, describe, expect, test } from 'vitest'
 
 describe('@/components/custom-tooltip/CustomTooltipBalloon.vue', () => {
   let wrapper: VueWrapper

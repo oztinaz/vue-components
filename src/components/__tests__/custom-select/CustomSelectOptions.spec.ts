@@ -1,20 +1,18 @@
 import CustomSelectOptions from '@/components/custom-select/CustomSelectOptions.vue'
+import type { CustomSelectOption } from '@/types/CustomSelect'
 import { ArrayUtils } from '@/utils/ArrayUtils'
-import { beforeEach, describe, expect, test, vi, type Mock } from 'vitest'
-import { ref, type Ref } from 'vue'
 import { faker } from '@faker-js/faker'
 import { flushPromises, shallowMount, type VueWrapper } from '@vue/test-utils'
-import type { CustomSelectOption } from '@/types/CustomSelect'
+import { beforeEach, describe, expect, test, vi, type Mock } from 'vitest'
+import { ref, type Ref } from 'vue'
 
 describe('@/components/custom-select/CustomSelectOptions.vue', () => {
-  const options: CustomSelectOption[] = ArrayUtils.createRange(1).map(
-    (): CustomSelectOption => {
-      return {
-        label: faker.lorem.word(),
-        value: faker.lorem.word()
-      }
+  const options: CustomSelectOption[] = ArrayUtils.createRange(1).map((): CustomSelectOption => {
+    return {
+      label: faker.lorem.word(),
+      value: faker.lorem.word()
     }
-  )
+  })
   const selection: Ref<boolean | Date | number | string | null> = ref(null)
   let close: Mock
   let wrapper: VueWrapper

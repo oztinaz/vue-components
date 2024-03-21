@@ -1,18 +1,21 @@
 <script setup lang="ts">
-import LoadingImage from '@/components/LoadingImage.vue';
-import { computed, type ComputedRef, type StyleValue } from 'vue';
+import LoadingImage from '@/components/LoadingImage.vue'
+import { computed, type ComputedRef, type StyleValue } from 'vue'
 
-const props = withDefaults(defineProps<{
-  color?: 'blue' | 'green' | 'grey' | 'red'
-  disabled?: boolean
-  loading?: boolean
-  size?: 'big' | 'normal' | 'small'
-}>(), {
-  color: 'grey',
-  disabled: false,
-  loading: false,
-  size: 'normal'
-})
+const props = withDefaults(
+  defineProps<{
+    color?: 'blue' | 'green' | 'grey' | 'red'
+    disabled?: boolean
+    loading?: boolean
+    size?: 'big' | 'normal' | 'small'
+  }>(),
+  {
+    color: 'grey',
+    disabled: false,
+    loading: false,
+    size: 'normal'
+  }
+)
 
 const isDisabled: ComputedRef<boolean> = computed((): boolean => {
   return props.disabled || props.loading
@@ -38,10 +41,15 @@ const style: ComputedRef<StyleValue> = computed((): StyleValue => {
 
 <template>
   <button :class="props.size" :disabled="isDisabled" :style="style">
-    <LoadingImage :height="loadingSize" :width="loadingSize" data-test="loading" v-if="props.loading" />
+    <LoadingImage
+      :height="loadingSize"
+      :width="loadingSize"
+      data-test="loading"
+      v-if="props.loading"
+    />
     <span data-test="span" v-else>
       <slot></slot>
-    </span>    
+    </span>
   </button>
 </template>
 

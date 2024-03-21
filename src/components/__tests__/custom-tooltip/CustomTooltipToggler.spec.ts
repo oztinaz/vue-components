@@ -1,7 +1,7 @@
 import CustomTooltipToggler from '@/components/custom-tooltip/CustomTooltipToggler.vue'
+import { shallowMount, type VueWrapper } from '@vue/test-utils'
 import { beforeEach, describe, expect, test } from 'vitest'
 import { ref, type Ref } from 'vue'
-import { shallowMount, type VueWrapper } from '@vue/test-utils'
 
 describe('@/components/custom-tooltip/CustomTooltipToggler.vue', () => {
   let wrapper: VueWrapper

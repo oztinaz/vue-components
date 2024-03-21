@@ -1,9 +1,9 @@
 import CustomSelectToggler from '@/components/custom-select/CustomSelectToggler.vue'
-import { beforeEach, describe, expect, test, vi } from 'vitest'
 import type { CustomSelectOption } from '@/types/CustomSelect'
-import { flushPromises, mount, type VueWrapper } from '@vue/test-utils'
 import { ArrayUtils } from '@/utils/ArrayUtils'
 import { faker } from '@faker-js/faker'
+import { flushPromises, mount, type VueWrapper } from '@vue/test-utils'
+import { beforeEach, describe, expect, test, vi } from 'vitest'
 
 describe('@/components/custom-select/CustomSelectToggler.vue', () => {
   const close = vi.fn()

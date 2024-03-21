@@ -1,7 +1,7 @@
 import DatetimeInput from '@/components/inputs/DatetimeInput.vue'
+import { mount, type VueWrapper } from '@vue/test-utils'
 import { beforeEach, describe, expect, test } from 'vitest'
 import { ref, type Ref } from 'vue'
-import { mount, type VueWrapper } from '@vue/test-utils'
 
 describe('@/components/inputs/DatetimeInput.vue', () => {
   const datetime: Ref<Date | null> = ref(null)

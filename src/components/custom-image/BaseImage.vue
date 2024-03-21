@@ -1,18 +1,21 @@
 <script setup lang="ts">
-import { computed, type ComputedRef, type StyleValue } from 'vue';
+import { computed, type ComputedRef, type StyleValue } from 'vue'
 
-const props =  withDefaults(defineProps<{
-  alt: string
-  height: number
-  src: string
-  width: number
-  borderColor?: string
-  borderRadiusSize?: number
-  borderSize?: number
-  title?: string
-}>(), {
-  borderColor: 'var(--c-grey)'
-})
+const props = withDefaults(
+  defineProps<{
+    alt: string
+    height: number
+    src: string
+    width: number
+    borderColor?: string
+    borderRadiusSize?: number
+    borderSize?: number
+    title?: string
+  }>(),
+  {
+    borderColor: 'var(--c-grey)'
+  }
+)
 
 const style: ComputedRef<StyleValue> = computed((): StyleValue => {
   const style: StyleValue = {}

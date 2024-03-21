@@ -1,15 +1,15 @@
-import CustomImage from "@/components/custom-image/CustomImage.vue";
-import { beforeEach, describe, expect, test, vi } from "vitest";
-import { ref, type Ref } from "vue";
-import { faker } from "@faker-js/faker";
-import { flushPromises, shallowMount, type VueWrapper } from "@vue/test-utils";
+import CustomImage from '@/components/custom-image/CustomImage.vue'
+import { faker } from '@faker-js/faker'
+import { shallowMount, type VueWrapper } from '@vue/test-utils'
+import { beforeEach, describe, expect, test, vi } from 'vitest'
+import { ref, type Ref } from 'vue'
 
 describe('@/components/custom-image/CustomImage.vue', () => {
-  const height: number = faker.number.int({ max: 10, min: 1})
+  const height: number = faker.number.int({ max: 10, min: 1 })
   const src: Ref<string> = ref('')
-  const width: number = faker.number.int({ max: 10, min: 1})
+  const width: number = faker.number.int({ max: 10, min: 1 })
   let wrapper: VueWrapper
-  
+
   beforeEach(() => {
     wrapper = shallowMount(CustomImage, {
       props: {

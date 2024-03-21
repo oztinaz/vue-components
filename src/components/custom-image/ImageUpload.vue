@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import FaCameraIcon from '@/components/icons/fa/FaCameraIcon.vue'
-import { computed, type ComputedRef } from 'vue';
+import { computed, type ComputedRef } from 'vue'
 
 const src = defineModel<string>({
   required: true
@@ -26,7 +26,12 @@ const upload = (e) => {
 </script>
 
 <template>
-  <div class="image-upload-container" data-test="image-upload-container" @change="upload" v-if="props.isOpen">
+  <div
+    class="image-upload-container"
+    data-test="image-upload-container"
+    @change="upload"
+    v-if="props.isOpen"
+  >
     <label for="image-upload">
       <FaCameraIcon :font-size="imageUploadIconSize" />
       Choose an image
@@ -41,7 +46,7 @@ const upload = (e) => {
     opacity: 0;
   }
   to {
-  opacity: 85%;
+    opacity: 85%;
   }
 }
 
