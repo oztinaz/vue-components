@@ -1,6 +1,6 @@
 import CustomTooltip from '@/components/custom-tooltip/CustomTooltip.vue'
-import { beforeEach, describe, expect, test } from 'vitest'
 import { flushPromises, mount, type VueWrapper } from '@vue/test-utils'
+import { beforeEach, describe, expect, test } from 'vitest'
 
 describe('@/components/custom-tooltip/CustomTooltip.vue', () => {
   let wrapper: VueWrapper
