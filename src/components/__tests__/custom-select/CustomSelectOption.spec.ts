@@ -1,9 +1,9 @@
 import CustomSelectOption from '@/components/custom-select/CustomSelectOption.vue'
-import { beforeEach, describe, expect, test, vi, type Mock } from 'vitest'
-import { ref, type Ref } from 'vue'
+import type { CustomSelectOption as TCustomSelectOption } from '@/types/CustomSelect'
 import { faker } from '@faker-js/faker'
 import { shallowMount, type VueWrapper } from '@vue/test-utils'
-import type { CustomSelectOption as TCustomSelectOption } from '@/types/CustomSelect'
+import { beforeEach, describe, expect, test, vi, type Mock } from 'vitest'
+import { ref, type Ref } from 'vue'
 
 describe('@/components/custom-select/CustomSelectOption.vue', () => {
   const option: TCustomSelectOption = {

@@ -1,7 +1,7 @@
-import CustomButton from "@/components/CustomButton.vue";
-import { beforeEach, describe, expect, test } from "vitest";
-import { mount, type VueWrapper } from "@vue/test-utils";
-import { faker } from "@faker-js/faker";
+import CustomButton from '@/components/CustomButton.vue'
+import { faker } from '@faker-js/faker'
+import { mount, type VueWrapper } from '@vue/test-utils'
+import { beforeEach, describe, expect, test } from 'vitest'
 
 describe('@/components/CustomButton.vue', () => {
   const slot: string = faker.lorem.word()

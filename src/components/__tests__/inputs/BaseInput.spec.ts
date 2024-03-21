@@ -1,10 +1,10 @@
 import BaseInput from '@/components/inputs/BaseInput.vue'
-import { beforeEach, describe, expect, test } from 'vitest'
-import { ref, type Ref } from 'vue'
+import type { Validation } from '@/types/Validation'
 import { ArrayUtils } from '@/utils/ArrayUtils'
 import { faker } from '@faker-js/faker'
 import { mount, type VueWrapper } from '@vue/test-utils'
-import type { Validation } from '@/types/Validation'
+import { beforeEach, describe, expect, test } from 'vitest'
+import { ref, type Ref } from 'vue'
 
 describe('@/components/inputs/BaseInput.vue', () => {
   const slot: string = 'Hello, World!'

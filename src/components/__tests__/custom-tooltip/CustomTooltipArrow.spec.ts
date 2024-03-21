@@ -1,6 +1,6 @@
 import CustomTooltipArrow from '@/components/custom-tooltip/CustomTooltipArrow.vue'
-import { beforeEach, describe, expect, test } from 'vitest'
 import { VueWrapper, shallowMount } from '@vue/test-utils'
+import { beforeEach, describe, expect, test } from 'vitest'
 import type { StyleValue } from 'vue'
 
 describe('@/components/custom-tooltip/CustomTooltipArrow.vue', () => {

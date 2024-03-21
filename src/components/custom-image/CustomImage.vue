@@ -1,25 +1,28 @@
 <script setup lang="ts">
-import BaseImage from './BaseImage.vue';
-import ImageUpload from './ImageUpload.vue';
-import { ref, type Ref } from 'vue';
+import BaseImage from './BaseImage.vue'
+import ImageUpload from './ImageUpload.vue'
+import { ref, type Ref } from 'vue'
 
 const src = defineModel<string>({
   required: true
 })
 
-const props = withDefaults(defineProps<{
-  height: number
-  width: number
-  alt?: string
-  borderColor?: string
-  borderRadiusSize?: number
-  borderSize?: number
-  updatable?: boolean
-  title?: string
-}>(), {
-  alt: 'Custom Select',
-  updatable: false
-})
+const props = withDefaults(
+  defineProps<{
+    height: number
+    width: number
+    alt?: string
+    borderColor?: string
+    borderRadiusSize?: number
+    borderSize?: number
+    updatable?: boolean
+    title?: string
+  }>(),
+  {
+    alt: 'Custom Select',
+    updatable: false
+  }
+)
 
 const isImageUploadOpen: Ref<boolean> = ref(false)
 
@@ -33,7 +36,12 @@ const openImageUpload = (): void => {
 </script>
 
 <template>
-  <div class="custom-image" data-test="custom-image" @mouseenter="openImageUpload()" @mouseleave="closeImageUpload()">
+  <div
+    class="custom-image"
+    data-test="custom-image"
+    @mouseenter="openImageUpload()"
+    @mouseleave="closeImageUpload()"
+  >
     <ImageUpload
       :height="props.height"
       :is-open="isImageUploadOpen"

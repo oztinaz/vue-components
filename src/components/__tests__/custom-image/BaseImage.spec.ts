@@ -1,15 +1,15 @@
-import BaseImage from "@/components/custom-image/BaseImage.vue";
-import { faker } from "@faker-js/faker";
-import { shallowMount, type VueWrapper } from "@vue/test-utils";
-import { beforeEach, describe, expect, test } from "vitest";
+import BaseImage from '@/components/custom-image/BaseImage.vue'
+import { faker } from '@faker-js/faker'
+import { shallowMount, type VueWrapper } from '@vue/test-utils'
+import { beforeEach, describe, expect, test } from 'vitest'
 
 describe('@/components/custom-image/BaseImage.vue', () => {
   const alt: string = faker.lorem.word()
-  const height: number = faker.number.int({ max: 10, min: 1})
+  const height: number = faker.number.int({ max: 10, min: 1 })
   const src: string = faker.internet.url()
-  const width: number = faker.number.int({ max: 10, min: 1})
+  const width: number = faker.number.int({ max: 10, min: 1 })
   let wrapper: VueWrapper
-  
+
   beforeEach(() => {
     wrapper = shallowMount(BaseImage, {
       props: {
@@ -22,7 +22,7 @@ describe('@/components/custom-image/BaseImage.vue', () => {
   })
 
   test('style returns border and borderColor when props.borderSize is defined', async () => {
-    const borderSize: number = faker.number.int({ max: 10, min: 1})
+    const borderSize: number = faker.number.int({ max: 10, min: 1 })
     await wrapper.setProps({
       borderSize: borderSize
     })
@@ -32,8 +32,8 @@ describe('@/components/custom-image/BaseImage.vue', () => {
   })
 
   test('style returns border and borderRadius when props.borderSize and props.borderRadius are both defined', async () => {
-    const borderRadiusSize: number = faker.number.int({ max: 10, min: 1})
-    const borderSize: number = faker.number.int({ max: 10, min: 1})
+    const borderRadiusSize: number = faker.number.int({ max: 10, min: 1 })
+    const borderSize: number = faker.number.int({ max: 10, min: 1 })
     await wrapper.setProps({
       borderRadiusSize: borderRadiusSize,
       borderSize: borderSize
