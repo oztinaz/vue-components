@@ -28,4 +28,22 @@ describe('@/utils/ArrayUtils.ts', () => {
     expect(hasA).toBeTruthy()
     expect(hasB).toBeFalsy()
   })
+
+  test('insert inserts element to index', () => {
+    const array: string[] = ['a', 'c']
+    ArrayUtils.insert(array, 'b', 1)
+    expect(array).toStrictEqual(['a', 'b', 'c'])
+  })
+
+  test('update updates element of index', () => {
+    const array: string[] = ['a', 'c']
+    ArrayUtils.update(array, 'b', 1)
+    expect(array).toStrictEqual(['a', 'b'])
+  })
+
+  test('replace replaces elements of given induces', () => {
+    const array: string[] = ['a', 'b']
+    ArrayUtils.replace(array, 0, 1)
+    expect(array).toStrictEqual(['b', 'a'])
+  })
 })
